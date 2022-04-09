@@ -12,7 +12,12 @@ public class PersonService {
 
 //    @Autowired w starszych wersjach Spring'a trzeba dodać adnotację, do wstrzykiwania,
 //    w nowych nie trzeba, ale można
-    public PersonService(PersonRepository personRepository) {
+//    public PersonService(PersonRepository personRepository) {
+//        this.personRepository = personRepository;
+//    }
+
+    @Autowired //tu już adnotacja jest konieczna
+    public void setPersonRepository(PersonRepository personRepository) {
         this.personRepository = personRepository;
     }
 
